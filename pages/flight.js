@@ -16,8 +16,8 @@ function FlightPage() {
           alt="dnata banner"
           layout="responsive"
           priority
-          width={3556}
-          height={1868}
+          width={4448}
+          height={2094}
         />
       </div>
 

@@ -16,8 +16,8 @@ function VisaPage() {
           alt="dnata banner"
           layout="responsive"
           priority
-          width={3556}
-          height={1868}
+          width={6000}
+          height={3136}
         />
       </div>
 

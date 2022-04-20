@@ -43,8 +43,8 @@ function Home() {
               alt="dnata banner"
               layout="responsive"
               priority
-              width={3556}
-              height={1868}
+              width={3024}
+              height={1448}
             />
           </Link>
         </div>
@@ -56,8 +56,8 @@ function Home() {
               alt="dnata banner"
               layout="responsive"
               priority
-              width={3556}
-              height={1868}
+              width={4448}
+              height={2094}
             />
           </Link>
         </div>

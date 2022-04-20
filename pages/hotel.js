@@ -16,8 +16,8 @@ function HotelPage() {
           alt="dnata banner"
           layout="responsive"
           priority
-          width={3556}
-          height={1868}
+          width={2400}
+          height={1350}
         />
       </div>
 

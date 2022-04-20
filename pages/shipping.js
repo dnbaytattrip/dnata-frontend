@@ -16,8 +16,8 @@ function ShippingPage() {
           alt="dnata banner"
           layout="responsive"
           priority
-          width={3556}
-          height={1868}
+          width={3024}
+          height={1448}
         />
       </div>
 
