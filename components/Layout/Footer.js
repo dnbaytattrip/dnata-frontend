@@ -59,10 +59,8 @@ function Footer() {
           </div>
 
           <div className="mt-10 lg:mt-0 flex flex-col gap-4 w-full lg:w-[600px]">
-            <p className="text-white text-lg font-bold lg:mx-[60px]">
-              We Accept:
-            </p>
-            <div className="relative w-full lg:w-[600px] h-[50px] text-center">
+            <p className="text-white text-lg font-bold">We Accept:</p>
+            <div className="relative w-full h-[40px] lg:h-[65px]">
               <Image
                 src="/images/footer/footer-payment-method.png"
                 alt="payment method"
