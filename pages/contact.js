@@ -78,7 +78,7 @@ function ContactPage() {
                   <div className="mt-8 flex justify-start">
                     <button
                       type="submit"
-                      className="px-9 py-4 border-2 border-black text-black text-[11px] tracking-widest font-bold bg-transparent hover:bg-black hover:text-white transition duration-300 uppercase"
+                      className="px-9 py-3 border-2 border-custom-blue3 text-custom-blue3 text-[11px] tracking-widest font-bold bg-transparent hover:bg-custom-blue3 hover:text-white transition duration-300 uppercase"
                     >
                       Submit
                     </button>
