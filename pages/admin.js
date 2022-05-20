@@ -33,11 +33,12 @@ function AdminPage() {
 
     const data = await res.json();
 
-    console.log(data.text);
+    console.log(data.token);
 
     if (data.text === "success") {
       toast.success("Success!");
       router.push("/dashboard");
+      localStorage.setItem("token", data.token);
     } else if (data.text === "not found") {
       toast.error("Email not found");
     } else if (data.text === "failure") {

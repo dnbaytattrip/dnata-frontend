@@ -1,17 +1,24 @@
+import { useState, useEffect } from "react";
+
 const API_URL = "https://dbackendnata.vercel.app";
 
-export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/getinfo`);
-  const data = await res.json();
+function DashBoardPage() {
+  const [usersData, setUsertsData] = useState([]);
 
-  return {
-    props: {
-      usersData: data.jane,
-    },
-  };
-}
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`${API_URL}/getinfo`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+      });
+      const data = await res.json();
+      setUsertsData(data.jane);
+    };
+    fetchData();
+  }, []);
 
-function DashBoardPage({ usersData }) {
   return (
     <div>
       <div className="flex flex-col items-center justify-center py-20">
