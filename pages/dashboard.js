@@ -1,5 +1,3 @@
-// import { userData } from "../data/userData";
-
 const API_URL = "https://dbackendnata.vercel.app";
 
 export async function getServerSideProps() {

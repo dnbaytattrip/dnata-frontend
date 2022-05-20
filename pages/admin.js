@@ -1,24 +1,51 @@
+import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TextField from "../components/TextField";
 
+const API_URL = "https://dbackendnata.vercel.app";
+
 function AdminPage() {
+  const router = useRouter();
+
   const initialvalues = {
-    name: "",
+    email: "",
     password: "",
   };
 
   const validate = Yup.object({
-    name: Yup.string().required("Username is required"),
+    email: Yup.string().required("Email is required"),
     password: Yup.string().required("Password is required"),
   });
 
-  const handleSubmit = (values, formik) => {
-    console.log("Submitted values", values);
-    formik.resetForm();
-    toast.success("Form Submitted!");
+  const handleSubmit = async (values, formik) => {
+    const { email, password } = values;
+
+    const res = await fetch(`${API_URL}/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+
+    console.log(data.text);
+
+    if (data.text === "success") {
+      toast.success("Success!");
+      router.push("/dashboard");
+    } else if (data.text === "not found") {
+      toast.error("Email not found");
+    } else if (data.text === "failure") {
+      toast.error("Wrong Password");
+    } else {
+      toast.error("Something went wrong!");
+      console.log(res);
+    }
   };
 
   return (
@@ -40,7 +67,7 @@ function AdminPage() {
                   <ToastContainer />
                   <div className="text-sm gap-y-5 md:gap-y-7">
                     <div className="w-[320px] md:w-[400px]">
-                      <TextField label="Username *" name="name" type="text" />
+                      <TextField label="Email *" name="email" type="email" />
                     </div>
 
                     <div className="mt-8 w-[320px] md:w-[400px]">
@@ -48,6 +75,7 @@ function AdminPage() {
                         label="Password *"
                         name="password"
                         type="password"
+                        autoComplete="on"
                       />
                     </div>
                   </div>
