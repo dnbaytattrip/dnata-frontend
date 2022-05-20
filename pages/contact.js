@@ -1,9 +1,11 @@
 import * as Yup from "yup";
-import { useFormik, Formik, Form } from "formik";
+import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "../components/Layout";
 import TextField from "../components/TextField";
+
+const API_URL = "https://dbackendnata.vercel.app";
 
 const pageDetails = {
   title: "Contact page",
@@ -15,21 +17,48 @@ function ContactPage() {
   const initialvalues = {
     name: "",
     email: "",
-    phone: "",
+    number: "",
     country: "",
   };
 
   const validate = Yup.object({
-    name: Yup.string().required("First Name is required"),
+    name: Yup.string().required("Name is required"),
     email: Yup.string().required("Email is required"),
-    phone: Yup.string().required("Phone No is required"),
+    number: Yup.string().required("Phone No is required"),
     country: Yup.string().required("Country is required"),
   });
+
+  const handleSubmit = async (values, formik) => {
+    const { name, email, number, country } = values;
+
+    const res = await fetch(`${API_URL}/saveinfo`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, number, country }),
+    });
+
+    if (res.ok) {
+      toast.success("Message sent successfully!");
+      console.log(res);
+      formik.resetForm();
+    } else {
+      console.log("status", res.status);
+      toast.error("Something went wrong!");
+    }
+  };
+
+  // const handleSubmit = (values, formik) => {
+  //   console.log("Submitted values", values);
+  //   formik.resetForm();
+  //   toast.success("Form Submitted!");
+  // };
 
   return (
     <Layout pageDetails={pageDetails}>
       <div className="container w-full lg:w-[65%] px-4 py-10 lg:py-20 overflow-hidden">
-        <div className="">
+        <div>
           <h1 className="pl-5 text-3xl font-bold text-center uppercase">
             Contact Us
           </h1>
@@ -42,11 +71,7 @@ function ContactPage() {
             <Formik
               initialValues={initialvalues}
               validationSchema={validate}
-              onSubmit={(values, { resetForm }) => {
-                console.log("Submitted values", values);
-                resetForm();
-                toast.success("Form Submitted");
-              }}
+              onSubmit={handleSubmit}
             >
               {(formik) => (
                 <Form>
@@ -64,7 +89,7 @@ function ContactPage() {
                       />
                     </div>
                     <div className="col-span-2 sm:col-span-1">
-                      <TextField label="Phone No *" name="phone" type="text" />
+                      <TextField label="Phone No *" name="number" type="text" />
                     </div>
                     <div className="col-span-2 sm:col-span-1">
                       <TextField

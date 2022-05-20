@@ -1,0 +1,51 @@
+export const userData = [
+  {
+    id: 0,
+    name: "John Doe",
+    email: "john@email.com",
+    number: "123456",
+    country: "USA",
+  },
+  {
+    id: 1,
+    name: "John Doe2",
+    email: "john@email.com",
+    number: "123456",
+    country: "USA",
+  },
+  {
+    id: 2,
+    name: "John Doe3",
+    email: "john@email.com",
+    number: "123456",
+    country: "USA",
+  },
+  {
+    id: 3,
+    name: "John Doe4",
+    email: "john@email.com",
+    number: "123456",
+    country: "USA",
+  },
+  {
+    id: 4,
+    name: "John Doe4",
+    email: "john@email.com",
+    number: "123456",
+    country: "USA",
+  },
+  {
+    id: 5,
+    name: "John Doe4",
+    email: "john@email.com",
+    number: "123456",
+    country: "USA",
+  },
+  {
+    id: 6,
+    name: "John Doe4",
+    email: "john@email.com",
+    number: "123456",
+    country: "USA",
+  },
+];
