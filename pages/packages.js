@@ -2,24 +2,24 @@ import Layout from "../components/Layout";
 import Image from "next/image";
 
 const pageDetails = {
-  title: "Export Import page",
+  title: "Packages page",
   description: "dnata",
   keywords: "dnata",
 };
 
-function ExportImportPage() {
+function PackagesPage() {
   return (
     <Layout pageDetails={pageDetails}>
-      <div className="">
+      {/* <div className="mx-4 lg:mx-16 mt-5 lg:mt-16">
         <Image
-          src="/images/banners/export-import.jpg"
+          src="/images/banners/escape-to-holiday.jpg"
           alt="dnata banner"
           layout="responsive"
           priority
-          width={1469}
-          height={762}
+          width={3556}
+          height={1868}
         />
-      </div>
+      </div> */}
 
       <div className="my-10 lg:my-20 mx-4 lg:container">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, dolore.
@@ -39,4 +39,4 @@ function ExportImportPage() {
   );
 }
 
-export default ExportImportPage;
+export default PackagesPage;

@@ -2,15 +2,15 @@ import Layout from "../components/Layout";
 import Image from "next/image";
 
 const pageDetails = {
-  title: "Holiday page",
+  title: "FAQ page",
   description: "dnata",
   keywords: "dnata",
 };
 
-function HolidayPage() {
+function FaqPage() {
   return (
     <Layout pageDetails={pageDetails}>
-      <div className="mx-4 lg:mx-16 mt-5 lg:mt-16">
+      {/* <div className="mx-4 lg:mx-16 mt-5 lg:mt-16">
         <Image
           src="/images/banners/escape-to-holiday.jpg"
           alt="dnata banner"
@@ -19,7 +19,7 @@ function HolidayPage() {
           width={3556}
           height={1868}
         />
-      </div>
+      </div> */}
 
       <div className="my-10 lg:my-20 mx-4 lg:container">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, dolore.
@@ -39,4 +39,4 @@ function HolidayPage() {
   );
 }
 
-export default HolidayPage;
+export default FaqPage;

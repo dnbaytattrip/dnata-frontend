@@ -53,7 +53,13 @@ function Dropdown({ isOpen, toggleOpen }) {
         <Link href="/visa" passHref>
           <a className={activeClass("/visa")}>Visa</a>
         </Link>
-        <Link href="/holiday" passHref>
+        <Link href="/packages" passHref>
+          <a className={activeClass("/packages")}>Packages</a>
+        </Link>
+        <Link href="/faq" passHref>
+          <a className={activeClass("/faq")}>FAQ</a>
+        </Link>
+        {/* <Link href="/holiday" passHref>
           <a className={activeClass("/holiday")}>Holiday</a>
         </Link>
         <Link href="/shipping" passHref>
@@ -61,7 +67,7 @@ function Dropdown({ isOpen, toggleOpen }) {
         </Link>
         <Link href="/export-import" passHref>
           <a className={activeClass("/export-import")}>Export/Import</a>
-        </Link>
+        </Link> */}
         <Link href="/about-us" passHref>
           <a className={activeClass("/about-us")}>About Us</a>
         </Link>

@@ -129,7 +129,7 @@ function Footer() {
                   <FaLocationArrow className="inline mr-2" />
                 </span>
                 <p className="hover:text-gray-600 transition duration-300">
-                  The Floria Castle (3rd Floor), Suite- C1, House- 07
+                  The Florida Castle (3rd Floor), Suite- C1, House- 07
                   <br /> Road - 23/ A, Gulshan -1, Dhaka-1212
                 </p>
               </div>

@@ -85,7 +85,25 @@ function Header() {
                 Visa
               </a>
             </Link>
-            <Link href="/holiday" passHref>
+            <Link href="/packages" passHref>
+              <a
+                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
+                  "/packages"
+                )}`}
+              >
+                Packages
+              </a>
+            </Link>
+            <Link href="/faq" passHref>
+              <a
+                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
+                  "/faq"
+                )}`}
+              >
+                FAQ
+              </a>
+            </Link>
+            {/* <Link href="/holiday" passHref>
               <a
                 className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
                   "/holiday"
@@ -111,7 +129,7 @@ function Header() {
               >
                 Export/Import
               </a>
-            </Link>
+            </Link> */}
             <Link href="/about-us" passHref>
               <a
                 className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
