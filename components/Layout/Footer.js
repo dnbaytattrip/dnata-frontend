@@ -58,7 +58,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 lg:mt-0 flex flex-col gap-4 w-full lg:w-[600px]">
+          {/* <div className="mt-10 lg:mt-0 flex flex-col gap-4 w-full lg:w-[600px]">
             <p className="text-white text-lg font-bold">We Accept:</p>
             <div className="relative w-full h-[40px] lg:h-[65px]">
               <Image
@@ -68,7 +68,7 @@ function Footer() {
                 objectFit="contain"
               />
             </div>
-          </div>
+          </div> */}
 
           <div className="mt-10 lg:mt-0 flex flex-col gap-5 text-sm font-bold text-black">
             <p className="">Contact Information</p>
