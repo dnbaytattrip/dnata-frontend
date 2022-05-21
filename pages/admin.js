@@ -33,10 +33,8 @@ function AdminPage() {
 
     const data = await res.json();
 
-    console.log(data.token);
-
     if (data.text === "success") {
-      toast.success("Success!");
+      // toast.success("Success!");
       router.push("/dashboard");
       localStorage.setItem("token", data.token);
     } else if (data.text === "not found") {

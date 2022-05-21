@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 const API_URL = "https://dbackendnata.vercel.app";
 
 function DashBoardPage() {
   const [usersData, setUsertsData] = useState([]);
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,8 +22,26 @@ function DashBoardPage() {
     fetchData();
   }, []);
 
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    router.push("/admin");
+  };
+
   return (
     <div>
+      <div className="bg-custom-blue4 flex justify-between items-center py-4 px-[300px]">
+        <div className="">
+          <h1 className="text-2xl font-bold text-custom-blue3">Dashboard</h1>
+        </div>
+        <div className="">
+          <button
+            className="bg-custom-blue3 text-white py-2 px-4 font-bold rounded-lg"
+            onClick={handleLogOut}
+          >
+            Log Out
+          </button>
+        </div>
+      </div>
       <div className="flex flex-col items-center justify-center py-20">
         <h1 className="text-custom-blue3 text-3xl font-bold">Users Info</h1>
 
