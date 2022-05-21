@@ -84,7 +84,7 @@ function DashBoardPage() {
                           {data.email}
                         </td>
                         <td className="p-2 lg:p-5 border-collapse border border-custom-blue3">
-                          {data.number}
+                          0{data.number}
                         </td>
                         <td className="p-2 lg:p-5 border-collapse border border-custom-blue3">
                           {data.country}
