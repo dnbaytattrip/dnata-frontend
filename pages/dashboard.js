@@ -14,7 +14,7 @@ function DashBoardPage() {
       const res = await fetch(`${API_URL}/getinfo`, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: localStorage.getItem("token"),
+          Authorization: localStorage.getItem("token-dnata"),
         },
       });
       const data = await res.json();
@@ -26,7 +26,7 @@ function DashBoardPage() {
   }, []);
 
   const handleLogOut = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("token-dnata");
     router.push("/admin");
   };
 
@@ -34,15 +34,15 @@ function DashBoardPage() {
     <div>
       {user ? (
         <div className="">
-          <div className="bg-custom-blue4 flex justify-between items-center py-4 px-[300px]">
+          <div className="bg-custom-blue4 flex justify-between items-center py-4 px-3 lg:px-[300px]">
             <div className="">
-              <h1 className="text-2xl font-bold text-custom-blue3">
+              <h1 className="text-xl lg:text-2xl font-bold text-custom-blue3">
                 Dashboard
               </h1>
             </div>
-            <div className="">
+            <div>
               <button
-                className="bg-custom-blue3 text-white py-2 px-4 font-bold rounded-lg"
+                className="bg-custom-blue3 scale-90 lg:scale-100 text-white py-2 px-4 font-bold rounded-lg"
                 onClick={handleLogOut}
               >
                 Log Out
@@ -50,9 +50,11 @@ function DashBoardPage() {
             </div>
           </div>
           <div className="flex flex-col items-center justify-center py-20">
-            <h1 className="text-custom-blue3 text-3xl font-bold">Users Info</h1>
+            <h1 className="text-custom-blue3 text-2xl lg:text-3xl font-bold">
+              Users Info
+            </h1>
 
-            <div className="mt-14 scale-90 md:scale-100">
+            <div className="mt-10 lg:mt-14 scale-90 origin-top md:scale-100">
               <table className="table-auto border-collapse border border-custom-blue3 text-center text-xs lg:text-base">
                 <thead className="bg-custom-blue2 text-white">
                   <tr>

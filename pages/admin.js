@@ -36,7 +36,7 @@ function AdminPage() {
     if (data.text === "success") {
       // toast.success("Success!");
       router.push("/dashboard");
-      localStorage.setItem("token", data.token);
+      localStorage.setItem("token-dnata", data.token);
     } else if (data.text === "not found") {
       toast.error("Email not found");
     } else if (data.text === "failure") {
