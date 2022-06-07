@@ -1,5 +1,6 @@
 import Layout from "../components/Layout";
 import Image from "next/image";
+import Countries from "../components/Countries";
 
 const pageDetails = {
   title: "Visa page",
@@ -20,6 +21,8 @@ function VisaPage() {
           height={3136}
         />
       </div>
+
+      <Countries />
 
       <div className="my-10 lg:my-20 mx-4 lg:container">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, dolore.
