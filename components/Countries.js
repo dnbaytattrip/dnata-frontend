@@ -1,13 +1,21 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 function Countries() {
+  const [country, setCountry] = useState("");
+
+  console.log(country);
+
   return (
     <div>
       <Link href="/contact" passHref>
         <a>
           <div className="my-1 grid grid-cols-1 lg:grid-cols-2 gap-1">
-            <div className="h-[400px] lg:h-[1000px] relative">
+            <div
+              className="h-[400px] lg:h-[1000px] relative"
+              onClick={() => setCountry("Thailand")}
+            >
               <Image
                 src="/images/banners/thailand.jpg"
                 alt="thailand"
@@ -24,7 +32,10 @@ function Countries() {
               </h1>
             </div>
 
-            <div className="h-[400px] lg:h-[1000px] relative">
+            <div
+              className="h-[400px] lg:h-[1000px] relative"
+              onClick={() => setCountry("Myanmar")}
+            >
               <Image
                 src="/images/banners/myanmar.jpg"
                 alt="myanmar"
