@@ -25,7 +25,7 @@ function Home() {
         <div className="">
           <Link href="/contact" passHref>
             <a>
-              <div className="my-24 grid grid-cols-1 lg:grid-cols-2 ">
+              <div className="my-1 grid grid-cols-1 lg:grid-cols-2 ">
                 <div className="h-[400px] lg:h-[1000px] relative">
                   <Image
                     src="/images/banners/thailand.jpg"
