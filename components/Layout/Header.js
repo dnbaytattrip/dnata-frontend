@@ -103,7 +103,6 @@ function Header() {
                 Hotel
               </a>
             </Link>
-
             <Link href="/packages" passHref>
               <a
                 className={`hover:text-custom-blue3 transition duration-300 ${activeClass(

@@ -44,38 +44,33 @@ function Dropdown({ isOpen, toggleOpen }) {
         >
           <MdClose />
         </span>
+        <Link href="/" passHref>
+          <a className={activeClass("/")}>Home</a>
+        </Link>
+        <Link href="/about-us" passHref>
+          <a className={activeClass("/about-us")}>About Us</a>
+        </Link>
+        <Link href="/visa" passHref>
+          <a className={activeClass("/visa")}>Visa</a>
+        </Link>
         <Link href="/flight" passHref>
           <a className={activeClass("/flight")}>Flight</a>
         </Link>
         <Link href="/hotel" passHref>
           <a className={activeClass("/hotel")}>Hotel</a>
         </Link>
-        <Link href="/visa" passHref>
-          <a className={activeClass("/visa")}>Visa</a>
-        </Link>
+
         <Link href="/packages" passHref>
           <a className={activeClass("/packages")}>Packages</a>
         </Link>
         <Link href="/faq" passHref>
           <a className={activeClass("/faq")}>FAQ</a>
         </Link>
-        {/* <Link href="/holiday" passHref>
-          <a className={activeClass("/holiday")}>Holiday</a>
-        </Link>
-        <Link href="/shipping" passHref>
-          <a className={activeClass("/shipping")}>Shipping</a>
-        </Link>
-        <Link href="/export-import" passHref>
-          <a className={activeClass("/export-import")}>Export/Import</a>
-        </Link> */}
-        <Link href="/about-us" passHref>
-          <a className={activeClass("/about-us")}>About Us</a>
-        </Link>
 
         <div className="border-t mt-5 border-gray-500">
           <Link href="/contact" passHref>
             <button className="mt-7 px-5 py-2 rounded-full text-white text-sm font-bold bg-custom-blue3 hover:bg-custom-blue2 transition duration-300">
-              Contact
+              Contact Us
             </button>
           </Link>
         </div>
