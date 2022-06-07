@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "../components/Layout";
 import TextField from "../components/TextField";
+// import { FaPhone, FaEnvelope, FaLocationArrow } from "react-icons/fa";
 
 const API_URL = "https://dbackendnata.vercel.app";
 
@@ -59,12 +60,78 @@ function ContactPage() {
     <Layout pageDetails={pageDetails}>
       <div className="container w-full lg:w-[65%] px-4 py-10 lg:py-20 overflow-hidden">
         <div>
-          <h1 className="pl-5 text-3xl font-bold text-center uppercase">
+          <div className="space-y-5 text-black">
+            <div className="flex flex-wrap">
+              {/* <span>
+                <FaPhone className="inline mr-2" />
+              </span> */}
+              <p className="inline mr-2 font-bold">Phone:</p>
+              <a
+                href="tel:+8802-9848304"
+                className="hover:text-gray-600 transition duration-300"
+              >
+                (+8802) 9848304
+              </a>
+              &nbsp;|&nbsp;
+              <a
+                href="tel:+8802-8831804"
+                className="hover:text-gray-600 transition duration-300"
+              >
+                8831804
+              </a>
+              <a
+                href="tel:+8802-9847893"
+                className="hover:text-gray-600 transition duration-300"
+              >
+                9847893
+              </a>
+              &nbsp;|&nbsp;
+              <a
+                href="tel:+8802-9842924"
+                className="hover:text-gray-600 transition duration-300"
+              >
+                9842924
+              </a>
+              -
+              <a
+                href="tel:+8802-9842925"
+                className="hover:text-gray-600 transition duration-300"
+              >
+                5
+              </a>
+            </div>
+            <div className="flex">
+              {/* <span>
+                <FaEnvelope className="inline mr-2" />
+              </span> */}
+              <p className="inline mr-2 font-bold">Email:</p>
+
+              <a
+                href="mailto:info@dnatabd.com"
+                className="hover:text-gray-600 transition duration-300"
+              >
+                info@dnatabd.com
+              </a>
+            </div>
+            <div className="flex">
+              {/* <span>
+                <FaLocationArrow className="inline mr-2" />
+              </span> */}
+              <p className="inline mr-2 font-bold">Address:</p>
+
+              <p className="flex-flex-wrap hover:text-gray-600 transition duration-300">
+                The Florida Castle (3rd Floor), Suite- C1, House- 07, Road - 23/
+                A, Gulshan -1, Dhaka-1212
+              </p>
+            </div>
+          </div>
+
+          <h1 className="mt-20 pl-5 text-3xl font-bold text-center uppercase">
             Contact Us
           </h1>
           <p className="mt-3 lg:mt-6 text-[13px] lg:text-base leading-relaxed">
-            Use the form below to contact us regarding our services or other
-            inquiries. Someone will contact you within 1-2 business days.
+            Please fill the form below and Dnata agent will contact you within
+            24 hours
           </p>
 
           <div className="mt-6">

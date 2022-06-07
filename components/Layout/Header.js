@@ -58,6 +58,33 @@ function Header() {
           </button>
 
           <div className="hidden lg:flex justify-between items-center gap-8 text-base text-custom-blue2 font-bold">
+            <Link href="/" passHref>
+              <a
+                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
+                  "/"
+                )}`}
+              >
+                Home
+              </a>
+            </Link>
+            <Link href="/about-us" passHref>
+              <a
+                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
+                  "/about-us"
+                )}`}
+              >
+                About Us
+              </a>
+            </Link>
+            <Link href="/visa" passHref>
+              <a
+                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
+                  "/visa"
+                )}`}
+              >
+                Visa
+              </a>
+            </Link>
             <Link href="/flight" passHref>
               <a
                 className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
@@ -76,15 +103,7 @@ function Header() {
                 Hotel
               </a>
             </Link>
-            <Link href="/visa" passHref>
-              <a
-                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
-                  "/visa"
-                )}`}
-              >
-                Visa
-              </a>
-            </Link>
+
             <Link href="/packages" passHref>
               <a
                 className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
@@ -103,45 +122,9 @@ function Header() {
                 FAQ
               </a>
             </Link>
-            {/* <Link href="/holiday" passHref>
-              <a
-                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
-                  "/holiday"
-                )}`}
-              >
-                Holiday
-              </a>
-            </Link>
-            <Link href="/shipping" passHref>
-              <a
-                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
-                  "/shipping"
-                )}`}
-              >
-                Shipping
-              </a>
-            </Link>
-            <Link href="/export-import" passHref>
-              <a
-                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
-                  "/export-import"
-                )}`}
-              >
-                Export/Import
-              </a>
-            </Link> */}
-            <Link href="/about-us" passHref>
-              <a
-                className={`hover:text-custom-blue3 transition duration-300 ${activeClass(
-                  "/about-us"
-                )}`}
-              >
-                About Us
-              </a>
-            </Link>
             <Link href="/contact" passHref>
               <button className="px-5 py-2 rounded-full text-white text-xs font-bold bg-custom-blue3 hover:bg-custom-blue2 transition duration-300">
-                Contact
+                Contact Us
               </button>
             </Link>
           </div>

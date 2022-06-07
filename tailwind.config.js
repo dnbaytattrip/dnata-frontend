@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         NunitoSans: ["Nunito Sans, sans-serif"],
+        Merienda: ["Merienda, cursive"],
       },
       colors: {
         "custom-blue": "#E9F6FC",

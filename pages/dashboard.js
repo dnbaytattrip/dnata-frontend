@@ -5,7 +5,7 @@ const API_URL = "https://dbackendnata.vercel.app";
 
 function DashBoardPage() {
   const [user, setUser] = useState(false);
-  const [usersData, setUsertsData] = useState([]);
+  const [usersData, setUsersData] = useState([]);
 
   const router = useRouter();
 
@@ -18,7 +18,7 @@ function DashBoardPage() {
         },
       });
       const data = await res.json();
-      setUsertsData(data.jane);
+      setUsersData(data.jane);
 
       data.jane ? setUser(true) : setUser(false);
     };

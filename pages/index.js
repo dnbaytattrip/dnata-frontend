@@ -22,30 +22,45 @@ function Home() {
             height={1868}
           />
         </div>
-
-        <div className="my-10 lg:my-20 mx-4 lg:mx-10">
-          <Link href="/holiday" passHref>
-            <Image
-              src="/images/banners/escape-to-holiday.jpg"
-              alt="dnata banner"
-              layout="responsive"
-              priority
-              width={3556}
-              height={1868}
-            />
-          </Link>
-        </div>
-
         <div className="">
-          <Link href="/shipping" passHref>
-            <Image
-              src="/images/banners/shipping-dnata.jpg"
-              alt="dnata banner"
-              layout="responsive"
-              priority
-              width={3024}
-              height={1448}
-            />
+          <Link href="/contact" passHref>
+            <a>
+              <div className="grid grid-cols-1 lg:grid-cols-2 ">
+                <div className="h-[400px] lg:h-[1000px] relative">
+                  <Image
+                    src="/images/banners/thailand.jpg"
+                    alt="thailand"
+                    className="hover:scale-105 transition duration-1000"
+                    layout="fill"
+                    objectFit="cover"
+                    priority
+                    // width={1920}
+                    // height={1080}
+                  />
+
+                  <h1 className="absolute top-1/2 left-1/4 text-4xl lg:text-8xl font-Merienda font-bold text-white">
+                    THAILAND
+                  </h1>
+                </div>
+
+                <div className="h-[400px] lg:h-[1000px] relative">
+                  <Image
+                    src="/images/banners/myanmar.jpg"
+                    alt="myanmar"
+                    className="hover:scale-105 transition duration-1000"
+                    layout="fill"
+                    objectFit="cover"
+                    priority
+                    //  width={2560}
+                    //   height={1600}
+                  />
+
+                  <h1 className="absolute top-1/2 left-1/4 text-4xl lg:text-8xl font-Merienda font-bold text-white">
+                    MYANMAR
+                  </h1>
+                </div>
+              </div>
+            </a>
           </Link>
         </div>
 
