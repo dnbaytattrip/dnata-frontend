@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import * as Yup from "yup";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Layout from "../components/Layout";
 import TextField from "../components/TextField";
+import CountryContext from "../context/CountryContext";
 // import { FaPhone, FaEnvelope, FaLocationArrow } from "react-icons/fa";
 
 const API_URL = "https://dbackendnata.vercel.app";
@@ -15,11 +17,13 @@ const pageDetails = {
 };
 
 function ContactPage() {
+  const { country } = useContext(CountryContext);
+
   const initialvalues = {
     name: "",
     email: "",
     number: "",
-    country: "",
+    country: country,
   };
 
   const validate = Yup.object({
@@ -158,12 +162,43 @@ function ContactPage() {
                     <div className="col-span-2 sm:col-span-1">
                       <TextField label="Phone No *" name="number" type="text" />
                     </div>
-                    <div className="col-span-2 sm:col-span-1">
+
+                    {/* <div className="col-span-2 sm:col-span-1">
                       <TextField
                         label="Country You Want To Visit *"
                         name="country"
                         type="text"
+                        select='true'
                       />
+                    </div> */}
+
+                    <div className="col-span-2 sm:col-span-1">
+                      <label htmlFor="country">
+                        Country You Want To Visit *
+                      </label>
+                      <div className="my-2 relative">
+                        <Field
+                          as="select"
+                          name="country"
+                          id="country"
+                          className="p-2 w-full outline-none border border-slate-300 focus:border-custom-blue3"
+                        >
+                          <option
+                            value=""
+                            className="text-slate-400"
+                            defaultValue={true}
+                            hidden
+                          >
+                            Select a country
+                          </option>
+                          <option value="Thailand">Thailand</option>
+                          <option value="Myanmar">Myanmar</option>
+                        </Field>
+
+                        <p className="absolute -bottom-4 text-red-600 text-xs">
+                          <ErrorMessage name="country" />
+                        </p>
+                      </div>
                     </div>
                   </div>
 

@@ -1,11 +1,10 @@
-import { useState } from "react";
+import { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CountryContext from "../context/CountryContext";
 
 function Countries() {
-  const [country, setCountry] = useState("");
-
-  console.log(country);
+  const { selectCountry } = useContext(CountryContext);
 
   return (
     <div>
@@ -14,7 +13,7 @@ function Countries() {
           <div className="my-1 grid grid-cols-1 lg:grid-cols-2 gap-1">
             <div
               className="h-[400px] lg:h-[1000px] relative"
-              onClick={() => setCountry("Thailand")}
+              onClick={() => selectCountry("Thailand")}
             >
               <Image
                 src="/images/banners/thailand.jpg"
@@ -34,7 +33,7 @@ function Countries() {
 
             <div
               className="h-[400px] lg:h-[1000px] relative"
-              onClick={() => setCountry("Myanmar")}
+              onClick={() => selectCountry("Myanmar")}
             >
               <Image
                 src="/images/banners/myanmar.jpg"
