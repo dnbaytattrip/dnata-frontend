@@ -74,30 +74,30 @@ function ContactPage() {
                 href="tel:+8802-9848304"
                 className="hover:text-gray-600 transition duration-300"
               >
-                (+8802)&nbsp;9848304
+                (+8802) 9848304
               </a>
-              &nbsp;|&nbsp;
+              <span>&nbsp;|&nbsp;</span>
               <a
                 href="tel:+8802-8831804"
                 className="hover:text-gray-600 transition duration-300"
               >
                 8831804
               </a>
-              &nbsp;|&nbsp;
+              <span>&nbsp;|&nbsp;</span>
               <a
                 href="tel:+8802-9847893"
                 className="hover:text-gray-600 transition duration-300"
               >
                 9847893
               </a>
-              &nbsp;|&nbsp;
+              <span>&nbsp;|&nbsp;</span>
               <a
                 href="tel:+8802-9842924"
                 className="hover:text-gray-600 transition duration-300"
               >
                 9842924
               </a>
-              -
+              <span>-</span>
               <a
                 href="tel:+8802-9842925"
                 className="hover:text-gray-600 transition duration-300"
