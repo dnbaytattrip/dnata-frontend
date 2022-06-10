@@ -65,7 +65,7 @@ function ContactPage() {
       <div className="container w-full lg:w-[65%] px-4 py-10 lg:py-20 overflow-hidden">
         <div>
           <div className="space-y-5 text-black">
-            <div className="flex flex-wrap">
+            <div className="flex">
               {/* <span>
                 <FaPhone className="inline mr-2" />
               </span> */}
@@ -118,15 +118,15 @@ function ContactPage() {
                 info@dnatabd.com
               </a>
             </div>
-            <div className="flex flex-wrap">
+            <div className="flex">
               {/* <span>
                 <FaLocationArrow className="inline mr-2" />
               </span> */}
               <p className="inline mr-2 font-bold">Address:</p>
 
-              <p className="flex-flex-wrap hover:text-gray-600 transition duration-300">
-                The Florida Castle (3rd Floor), Suite- C1, House- 07, Road - 23/
-                A, Gulshan -1, Dhaka-1212
+              <p className="hover:text-gray-600 transition duration-300">
+                The Florida Castle (3rd Floor), Suite-C1, House-07, Road-23/A,
+                Gulshan-1, Dhaka-1212
               </p>
             </div>
           </div>
