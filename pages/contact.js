@@ -65,7 +65,7 @@ function ContactPage() {
       <div className="container w-full lg:w-[65%] px-4 py-10 lg:py-20 overflow-hidden">
         <div>
           <div className="space-y-5 text-black">
-            <div className="flex">
+            <div className="flex flex-wrap">
               {/* <span>
                 <FaPhone className="inline mr-2" />
               </span> */}
@@ -118,7 +118,7 @@ function ContactPage() {
                 info@dnatabd.com
               </a>
             </div>
-            <div className="flex">
+            <div className="flex flex-wrap">
               {/* <span>
                 <FaLocationArrow className="inline mr-2" />
               </span> */}
