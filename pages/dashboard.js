@@ -49,7 +49,7 @@ function DashBoardPage() {
               </button>
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center py-20">
+          <div className="flex flex-col items-center justify-center py-32">
             <h1 className="text-custom-blue3 text-2xl lg:text-3xl font-bold">
               Users Info
             </h1>
