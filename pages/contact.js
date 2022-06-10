@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ToastContainer, toast } from "react-toastify";
@@ -17,7 +17,7 @@ const pageDetails = {
 };
 
 function ContactPage() {
-  const { country } = useContext(CountryContext);
+  const { country, selectCountry } = useContext(CountryContext);
 
   const initialvalues = {
     name: "",
@@ -47,6 +47,7 @@ function ContactPage() {
     if (res.ok) {
       toast.success("Message sent successfully!");
       console.log(res);
+      selectCountry("");
       formik.resetForm();
     } else {
       console.log("status", res.status);
@@ -56,6 +57,7 @@ function ContactPage() {
 
   // const handleSubmit = (values, formik) => {
   //   console.log("Submitted values", values);
+  //   selectCountry("");
   //   formik.resetForm();
   //   toast.success("Form Submitted!");
   // };
