@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { ToastContainer, toast } from "react-toastify";
@@ -33,32 +33,32 @@ function ContactPage() {
     country: Yup.string().required("Country is required"),
   });
 
-  const handleSubmit = async (values, formik) => {
-    const { name, email, number, country } = values;
+  // const handleSubmit = async (values, formik) => {
+  //   const { name, email, number, country } = values;
 
-    const res = await fetch(`${API_URL}/saveinfo`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, number, country }),
-    });
+  //   const res = await fetch(`${API_URL}/saveinfo`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ name, email, number, country }),
+  //   });
 
-    if (res.ok) {
-      toast.success("Message sent successfully!");
-      console.log(res);
-      formik.resetForm();
-    } else {
-      console.log("status", res.status);
-      toast.error("Something went wrong!");
-    }
-  };
-
-  // const handleSubmit = (values, formik) => {
-  //   console.log("Submitted values", values);
-  //   formik.resetForm();
-  //   toast.success("Form Submitted!");
+  //   if (res.ok) {
+  //     toast.success("Message sent successfully!");
+  //     console.log(res);
+  //     formik.resetForm();
+  //   } else {
+  //     console.log("status", res.status);
+  //     toast.error("Something went wrong!");
+  //   }
   // };
+
+  const handleSubmit = (values, formik) => {
+    console.log("Submitted values", values);
+    formik.resetForm();
+    toast.success("Form Submitted!");
+  };
 
   return (
     <Layout pageDetails={pageDetails}>
@@ -143,6 +143,7 @@ function ContactPage() {
               initialValues={initialvalues}
               validationSchema={validate}
               onSubmit={handleSubmit}
+              enableReinitialize
             >
               {(formik) => (
                 <Form>

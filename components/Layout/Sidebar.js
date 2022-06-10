@@ -60,9 +60,9 @@ function Dropdown({ isOpen, toggleOpen }) {
           <a className={activeClass("/hotel")}>Hotel</a>
         </Link>
 
-        <Link href="/packages" passHref>
+        {/* <Link href="/packages" passHref>
           <a className={activeClass("/packages")}>Packages</a>
-        </Link>
+        </Link> */}
         <Link href="/faq" passHref>
           <a className={activeClass("/faq")}>FAQ</a>
         </Link>
