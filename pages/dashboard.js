@@ -34,7 +34,7 @@ function DashBoardPage() {
     <div>
       {user ? (
         <div className="">
-          <div className="bg-custom-blue4 flex justify-between items-center py-4 px-3 lg:px-[300px]">
+          <div className="bg-custom-blue4 flex justify-between items-center py-4 px-3 lg:px-[300px] fixed w-full">
             <div className="">
               <h1 className="text-xl lg:text-2xl font-bold text-custom-blue3">
                 Dashboard
