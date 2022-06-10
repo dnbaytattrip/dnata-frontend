@@ -26,7 +26,7 @@ function Countries() {
                 // height={1080}
               />
 
-              <h1 className="absolute top-1/2 left-1/4 text-4xl lg:text-8xl font-Merienda font-bold text-white">
+              <h1 className="absolute top-1/2 w-full text-center text-4xl lg:text-8xl font-Merienda font-bold text-white">
                 THAILAND
               </h1>
             </div>
@@ -46,7 +46,7 @@ function Countries() {
                 //   height={1600}
               />
 
-              <h1 className="absolute top-1/2 left-1/4 text-4xl lg:text-8xl font-Merienda font-bold text-white">
+              <h1 className="absolute top-1/2 w-full text-center text-4xl lg:text-8xl font-Merienda font-bold text-white">
                 MYANMAR
               </h1>
             </div>
