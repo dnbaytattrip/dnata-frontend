@@ -33,39 +33,39 @@ function ContactPage() {
     country: Yup.string().required("Country is required"),
   });
 
-  // const handleSubmit = async (values, formik) => {
-  //   const { name, email, number, country } = values;
+  const handleSubmit = async (values, formik) => {
+    const { name, email, number, country } = values;
 
-  //   const res = await fetch(`${API_URL}/saveinfo`, {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ name, email, number, country }),
-  //   });
+    const res = await fetch(`${API_URL}/saveinfo`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, number, country }),
+    });
 
-  //   if (res.ok) {
-  //     toast.success("Message sent successfully!");
-  //     console.log(res);
-  //     formik.resetForm();
-  //   } else {
-  //     console.log("status", res.status);
-  //     toast.error("Something went wrong!");
-  //   }
-  // };
-
-  const handleSubmit = (values, formik) => {
-    console.log("Submitted values", values);
-    formik.resetForm();
-    toast.success("Form Submitted!");
+    if (res.ok) {
+      toast.success("Message sent successfully!");
+      console.log(res);
+      formik.resetForm();
+    } else {
+      console.log("status", res.status);
+      toast.error("Something went wrong!");
+    }
   };
+
+  // const handleSubmit = (values, formik) => {
+  //   console.log("Submitted values", values);
+  //   formik.resetForm();
+  //   toast.success("Form Submitted!");
+  // };
 
   return (
     <Layout pageDetails={pageDetails}>
       <div className="container w-full lg:w-[65%] px-4 py-10 lg:py-20 overflow-hidden">
         <div>
           <div className="space-y-5 text-black">
-            <div className="flex flex-wrap">
+            <div className="flex">
               {/* <span>
                 <FaPhone className="inline mr-2" />
               </span> */}
@@ -74,7 +74,7 @@ function ContactPage() {
                 href="tel:+8802-9848304"
                 className="hover:text-gray-600 transition duration-300"
               >
-                (+8802) 9848304
+                (+8802)&nbsp;9848304
               </a>
               &nbsp;|&nbsp;
               <a
@@ -83,6 +83,7 @@ function ContactPage() {
               >
                 8831804
               </a>
+              &nbsp;|&nbsp;
               <a
                 href="tel:+8802-9847893"
                 className="hover:text-gray-600 transition duration-300"
