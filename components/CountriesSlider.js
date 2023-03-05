@@ -52,7 +52,7 @@ function CountriesSlider() {
           <SwiperSlide key={i}>
             <Link href={`/contact?country=${country.name}`} passHref>
               <a>
-                <div className="h-[450px] lg:h-[850px] relative mx-auto group">
+                <div className="h-[350px] lg:h-[550px] relative mx-auto group">
                   <Image
                     src={country.image}
                     alt={country.name}
