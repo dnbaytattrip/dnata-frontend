@@ -1,6 +1,6 @@
-import Layout from "../components/Layout";
 import Image from "next/image";
-import Countries from "../components/Countries";
+import CountriesSlider from "../components/CountriesSlider";
+import HeadSection from "../components/HeadSection";
 
 const pageDetails = {
   title: "Visa page",
@@ -10,7 +10,8 @@ const pageDetails = {
 
 function VisaPage() {
   return (
-    <Layout pageDetails={pageDetails}>
+    <>
+      <HeadSection pageDetails={pageDetails} />
       <div className="">
         <Image
           src="/images/banners/visa-poster.jpg"
@@ -22,7 +23,7 @@ function VisaPage() {
         />
       </div>
 
-      <Countries />
+      <CountriesSlider />
 
       <div className="my-10 lg:my-20 mx-4 lg:container">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, dolore.
@@ -38,7 +39,7 @@ function VisaPage() {
         veniam sequi similique, ex laboriosam aliquam asperiores molestiae,
         numquam vel qui recusandae.
       </div>
-    </Layout>
+    </>
   );
 }
 

@@ -1,14 +1,12 @@
-import { useContext } from "react";
+import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Layout from "../components/Layout";
+import { toast } from "react-toastify";
+import HeadSection from "../components/HeadSection";
+import { API_URL } from "../config";
+import { countries } from "../data/countries";
 import TextField from "../components/TextField";
-import CountryContext from "../context/CountryContext";
 // import { FaPhone, FaEnvelope, FaLocationArrow } from "react-icons/fa";
-
-const API_URL = "https://dbackendnata.vercel.app";
 
 const pageDetails = {
   title: "Contact page",
@@ -17,13 +15,15 @@ const pageDetails = {
 };
 
 function ContactPage() {
-  const { country, selectCountry } = useContext(CountryContext);
+  const router = useRouter();
+
+  const countryParam = router.query.country;
 
   const initialvalues = {
     name: "",
     email: "",
     number: "",
-    country: country,
+    country: countryParam || "",
   };
 
   const validate = Yup.object({
@@ -34,20 +34,21 @@ function ContactPage() {
   });
 
   const handleSubmit = async (values, formik) => {
-    const { name, email, number, country } = values;
+    // console.log(values);
+    // toast.success("Message sent successfully!");
+    // return;
 
     const res = await fetch(`${API_URL}/saveinfo`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, number, country }),
+      body: JSON.stringify(values),
     });
 
     if (res.ok) {
       toast.success("Message sent successfully!");
       console.log(res);
-      selectCountry("");
       formik.resetForm();
     } else {
       console.log("status", res.status);
@@ -55,15 +56,9 @@ function ContactPage() {
     }
   };
 
-  // const handleSubmit = (values, formik) => {
-  //   console.log("Submitted values", values);
-  //   selectCountry("");
-  //   formik.resetForm();
-  //   toast.success("Form Submitted!");
-  // };
-
   return (
-    <Layout pageDetails={pageDetails}>
+    <>
+      <HeadSection pageDetails={pageDetails} />
       <div className="container w-full lg:w-[65%] px-4 py-10 lg:py-20 overflow-hidden">
         <div>
           <div className="space-y-5 text-black">
@@ -146,11 +141,10 @@ function ContactPage() {
               initialValues={initialvalues}
               validationSchema={validate}
               onSubmit={handleSubmit}
-              enableReinitialize
+              // enableReinitialize
             >
               {(formik) => (
                 <Form>
-                  <ToastContainer />
                   <div className="grid grid-cols-2 text-sm gap-x-7 gap-y-5 md:gap-y-7">
                     <div className="col-span-2 sm:col-span-1">
                       <TextField label="Name *" name="name" type="text" />
@@ -186,6 +180,12 @@ function ContactPage() {
                           name="country"
                           id="country"
                           className="p-2 w-full outline-none border border-slate-300 focus:border-custom-blue3"
+                          onClick={() =>
+                            formik.values.country &&
+                            router.replace(
+                              `/contact?country=${formik.values.country}`
+                            )
+                          }
                         >
                           <option
                             value=""
@@ -195,8 +195,30 @@ function ContactPage() {
                           >
                             Select a country
                           </option>
-                          <option value="Thailand">Thailand</option>
-                          <option value="Myanmar">Myanmar</option>
+
+                          {countries.map((country, i) => (
+                            <option key={i} value={country.name}>
+                              {country.name}
+                            </option>
+                          ))}
+
+                          {/* <option
+                            value="Thailand"
+                            // onChange={() =>
+                            //   router.push(`/contact?country=thailand`)
+                            // }
+                          >
+                            Thailand
+                          </option> */}
+
+                          {/* <option
+                            value="Myanmar"
+                            // onChange={() =>
+                            //   router.push(`/contact?country=myanmar`)
+                            // }
+                          >
+                            Myanmar
+                          </option> */}
                         </Field>
 
                         <p className="absolute -bottom-4 text-red-600 text-xs">
@@ -220,7 +242,7 @@ function ContactPage() {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
 

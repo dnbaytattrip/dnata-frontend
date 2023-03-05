@@ -1,5 +1,4 @@
-import Layout from "../components/Layout";
-import Image from "next/image";
+import HeadSection from "../components/HeadSection";
 
 const pageDetails = {
   title: "FAQ page",
@@ -9,17 +8,8 @@ const pageDetails = {
 
 function FaqPage() {
   return (
-    <Layout pageDetails={pageDetails}>
-      {/* <div className="mx-4 lg:mx-16 mt-5 lg:mt-16">
-        <Image
-          src="/images/banners/escape-to-holiday.jpg"
-          alt="dnata banner"
-          layout="responsive"
-          priority
-          width={3556}
-          height={1868}
-        />
-      </div> */}
+    <>
+      <HeadSection pageDetails={pageDetails} />
 
       <div className="my-10 lg:my-20 mx-4 lg:container">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, dolore.
@@ -35,7 +25,7 @@ function FaqPage() {
         veniam sequi similique, ex laboriosam aliquam asperiores molestiae,
         numquam vel qui recusandae.
       </div>
-    </Layout>
+    </>
   );
 }
 

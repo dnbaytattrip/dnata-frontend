@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import Countries from "../components/Countries";
-import Layout from "../components/Layout";
+import CountriesSlider from "../components/CountriesSlider";
+import HeadSection from "../components/HeadSection";
 
 const pageDetails = {
   title: "Dnata ltd",
@@ -11,7 +11,9 @@ const pageDetails = {
 
 function Home() {
   return (
-    <Layout pageDetails={pageDetails}>
+    <>
+      <HeadSection pageDetails={pageDetails} />
+
       <div className="bg-white">
         <div>
           <Image
@@ -24,22 +26,24 @@ function Home() {
           />
         </div>
 
-        <Countries />
+        <CountriesSlider />
 
         <div className="">
           <Link href="/flight" passHref>
-            <Image
-              src="/images/banners/travel-with-dnata-wide.jpg"
-              alt="dnata banner"
-              layout="responsive"
-              priority
-              width={4448}
-              height={2094}
-            />
+            <a>
+              <Image
+                src="/images/banners/travel-with-dnata-wide.jpg"
+                alt="dnata banner"
+                layout="responsive"
+                priority
+                width={4448}
+                height={2094}
+              />
+            </a>
           </Link>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
 

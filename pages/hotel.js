@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
 import Image from "next/image";
+import HeadSection from "../components/HeadSection";
 
 const pageDetails = {
   title: "Hotel page",
@@ -9,7 +9,8 @@ const pageDetails = {
 
 function HotelPage() {
   return (
-    <Layout pageDetails={pageDetails}>
+    <>
+      <HeadSection pageDetails={pageDetails} />
       <div className="">
         <Image
           src="/images/banners/hotel-poster.jpg"
@@ -35,7 +36,7 @@ function HotelPage() {
         veniam sequi similique, ex laboriosam aliquam asperiores molestiae,
         numquam vel qui recusandae.
       </div>
-    </Layout>
+    </>
   );
 }
 

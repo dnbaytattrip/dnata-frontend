@@ -4,8 +4,7 @@ import { Formik, Form } from "formik";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import TextField from "../components/TextField";
-
-const API_URL = "https://dbackendnata.vercel.app";
+import { API_URL } from "../config";
 
 function AdminPage() {
   const router = useRouter();
@@ -32,6 +31,8 @@ function AdminPage() {
     });
 
     const data = await res.json();
+
+    console.log("data", data);
 
     if (data.text === "success") {
       // toast.success("Success!");

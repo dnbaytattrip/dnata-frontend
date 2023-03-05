@@ -2,81 +2,61 @@ import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { MdClose } from "react-icons/md";
-import { motion } from "framer-motion";
+import { navLinks } from "./navLinks";
 
-function Dropdown({ isOpen, toggleOpen }) {
-  const slide = {
-    initial: {
-      x: "90vw",
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      opacity: 1,
-    },
-  };
-
+function Sidebar({ toggle, setToggle, node }) {
   const router = useRouter();
 
   const activeClass = (path) =>
     router.pathname === path ? "text-gray-600" : "";
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.classList.add("active-sidebar");
-    } else {
-      document.body.classList.remove("active-sidebar");
+    if (toggle) {
+      document.body.classList.add("overflow-y-hidden");
     }
-  }, [isOpen]);
+
+    return () => document.body.classList.remove("overflow-y-hidden");
+  }, [toggle]);
 
   return (
-    <motion.div
-      className="lg:hidden fixed overflow-y-scroll right-0 left-14 inset-y-0 bg-custom-blue4 z-10"
-      variants={slide}
-      initial={false}
-      animate={isOpen ? "animate" : "initial"}
-      transition={{ duration: 0.3 }}
+    <div
+      className={
+        toggle
+          ? "fixed inset-0 bg-black/50 backdrop-blur-sm z-30 lg:bg-transparent"
+          : ""
+      }
     >
-      <div className="px-5 py-5 flex flex-col gap-2 text-black font-bold">
-        <span
-          className="text-black text-2xl mt-2 mb-5 mr-1.5 self-end hover:rotate-90 transition duration-300"
-          onClick={() => toggleOpen()}
-        >
-          <MdClose />
-        </span>
-        <Link href="/" passHref>
-          <a className={activeClass("/")}>Home</a>
-        </Link>
-        <Link href="/about-us" passHref>
-          <a className={activeClass("/about-us")}>About Us</a>
-        </Link>
-        <Link href="/visa" passHref>
-          <a className={activeClass("/visa")}>Visa</a>
-        </Link>
-        <Link href="/flight" passHref>
-          <a className={activeClass("/flight")}>Flight</a>
-        </Link>
-        <Link href="/hotel" passHref>
-          <a className={activeClass("/hotel")}>Hotel</a>
-        </Link>
+      <div
+        ref={node}
+        className={`lg:hidden h-screen bg-custom-blue4 z-30 fixed inset-y-0 right-0 text-white w-[270px] ease-out duration-300 ${
+          toggle ? "translate-x-0" : "translate-x-full"
+        }
+    `}
+      >
+        <div className="px-5 py-5 flex flex-col gap-2 text-black font-bold">
+          <span
+            className="text-black text-2xl mt-2 mb-5 mr-1.5 self-end hover:rotate-90 transition duration-300"
+            onClick={() => setToggle(false)}
+          >
+            <MdClose />
+          </span>
+          {navLinks.map((navLink, i) => (
+            <Link key={i} href={navLink.link} passHref>
+              <a className={activeClass(navLink.link)}>{navLink.name}</a>
+            </Link>
+          ))}
 
-        {/* <Link href="/packages" passHref>
-          <a className={activeClass("/packages")}>Packages</a>
-        </Link> */}
-        <Link href="/faq" passHref>
-          <a className={activeClass("/faq")}>FAQ</a>
-        </Link>
-
-        <div className="border-t mt-5 border-gray-500">
-          <Link href="/contact" passHref>
-            <button className="mt-7 px-5 py-2 rounded-full text-white text-sm font-bold bg-custom-blue3 hover:bg-custom-blue2 transition duration-300">
-              Contact Us
-            </button>
-          </Link>
+          <div className="border-t mt-5 border-gray-500">
+            <Link href="/contact" passHref>
+              <button className="mt-7 px-5 py-2 rounded-full text-white text-sm font-bold bg-custom-blue3 hover:bg-custom-blue2 transition duration-300">
+                Contact Us
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
-export default Dropdown;
+export default Sidebar;

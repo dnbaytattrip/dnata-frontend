@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
-const API_URL = "https://dbackendnata.vercel.app";
+import { API_URL } from "../config";
 
 function DashBoardPage() {
   const [user, setUser] = useState(false);

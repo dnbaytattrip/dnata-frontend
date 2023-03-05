@@ -6,7 +6,4 @@
   body {
     @apply font-NunitoSans;
   }
-  body.active-sidebar {
-    @apply overflow-y-hidden;
-  }
 }

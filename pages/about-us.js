@@ -1,3 +1,4 @@
+import HeadSection from "../components/HeadSection";
 import Layout from "../components/Layout";
 
 const pageDetails = {
@@ -8,7 +9,8 @@ const pageDetails = {
 
 function AboutUsPage() {
   return (
-    <Layout pageDetails={pageDetails}>
+    <>
+      <HeadSection pageDetails={pageDetails} />
       <div className="my-10 lg:my-20 mx-4 lg:container">
         <h1 className="text-3xl font-bold text-center">About Us</h1>
         <div className="my-20 grid grid-cols-1 lg:grid-cols-3 gap-y-20 lg:gap-x-20 ">
@@ -61,7 +63,7 @@ function AboutUsPage() {
           </p>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
 

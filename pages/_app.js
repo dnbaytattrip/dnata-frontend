@@ -1,11 +1,17 @@
+import Layout from "../components/Layout";
+import { ToastContainer } from "react-toastify";
 import "../styles/globals.css";
-import { CountryProvider } from "../context/CountryContext";
+import "react-toastify/dist/ReactToastify.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <CountryProvider>
-      <Component {...pageProps} />
-    </CountryProvider>
+    <>
+      <ToastContainer />
+
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
 
