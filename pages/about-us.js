@@ -2,7 +2,7 @@ import HeadSection from "../components/HeadSection";
 import Layout from "../components/Layout";
 
 const pageDetails = {
-  title: "Flight page",
+  title: "About page",
   description: "dnata",
   keywords: "dnata",
 };
