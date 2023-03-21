@@ -1,5 +1,9 @@
 export const countries = [
   {
+    name: "Vietnam",
+    image: "/images/countries/vietnam.jpg",
+  },
+  {
     name: "Bangkok",
     image: "/images/countries/bangkok.jpg",
   },
@@ -30,9 +34,5 @@ export const countries = [
   {
     name: "Singapore",
     image: "/images/countries/singapore.jpg",
-  },
-  {
-    name: "USA",
-    image: "/images/countries/statue of Liberty.png",
   },
 ];

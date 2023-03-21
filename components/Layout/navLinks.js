@@ -8,17 +8,21 @@ export const navLinks = [
     link: "/about-us",
   },
   {
-    name: "Visa",
-    link: "/visa",
+    name: "Services",
+    link: "/services",
   },
-  {
-    name: "Flight",
-    link: "/flight",
-  },
-  {
-    name: "Hotel",
-    link: "/hotel",
-  },
+  // {
+  //   name: "Visa",
+  //   link: "/visa",
+  // },
+  // {
+  //   name: "Flight",
+  //   link: "/flight",
+  // },
+  // {
+  //   name: "Hotel",
+  //   link: "/hotel",
+  // },
   {
     name: "FAQ",
     link: "/faq",
