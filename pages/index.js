@@ -17,7 +17,7 @@ function Home() {
       <div className="bg-white">
         <div>
           <Image
-            src="/images/banners/home.jpg"
+            src="/images/banners/dnatabd-banner.jpg"
             alt="dnata banner"
             layout="responsive"
             priority

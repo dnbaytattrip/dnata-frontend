@@ -17,7 +17,7 @@ function Footer() {
           <div className="flex flex-col self-center lg:self-start -mt-10">
             <div className="lg:mt-5 w-[160px] h-[100px]">
               <Image
-                src="/images/logos/dnata-logo.png"
+                src="/images/logos/dnatabd-logo.png"
                 alt="dnata logo"
                 width={320}
                 height={200}

@@ -26,7 +26,7 @@ function Header() {
             <a>
               <div className="w-[120px] lg:w-[160px] h-full">
                 <Image
-                  src="/images/logos/dnata-logo.png"
+                  src="/images/logos/dnatabd-logo.png"
                   alt="dnata logo"
                   width={320}
                   height={200}

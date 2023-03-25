@@ -5,7 +5,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          {/* <link rel="icon" href="/images/logos/logo.png" /> */}
+          <link rel="icon" href="/images/logos/dnatabd-logo.png" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
