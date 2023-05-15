@@ -11,9 +11,10 @@ const pageDetails = {
 };
 
 function Home() {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
-  console.log("session from index", session);
+  // console.log("session from index", session);
+
   return (
     <>
       <HeadSection pageDetails={pageDetails} />
