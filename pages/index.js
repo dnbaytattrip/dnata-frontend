@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CountriesSlider from "../components/CountriesSlider";
 import HeadSection from "../components/HeadSection";
+import { useSession } from "next-auth/react";
 
 const pageDetails = {
   title: "Dnata ltd",
@@ -10,6 +11,9 @@ const pageDetails = {
 };
 
 function Home() {
+  const { data: session } = useSession();
+
+  console.log("session from index", session);
   return (
     <>
       <HeadSection pageDetails={pageDetails} />
@@ -19,7 +23,7 @@ function Home() {
           <Image
             src="/images/banners/dnatabd-banner.jpg"
             alt="dnata banner"
-            layout="responsive"
+            // layout="responsive"
             priority
             width={3556}
             height={1868}
@@ -29,17 +33,15 @@ function Home() {
         <CountriesSlider />
 
         <div className="">
-          <Link href="/flight" passHref>
-            <a>
-              <Image
-                src="/images/banners/travel-with-dnata-wide.jpg"
-                alt="dnata banner"
-                layout="responsive"
-                priority
-                width={4448}
-                height={2094}
-              />
-            </a>
+          <Link href="/flight">
+            <Image
+              src="/images/banners/travel-with-dnata-wide.jpg"
+              alt="dnata banner"
+              // layout="responsive"
+              priority
+              width={4448}
+              height={2094}
+            />
           </Link>
         </div>
       </div>

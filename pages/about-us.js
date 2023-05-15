@@ -11,7 +11,7 @@ function AboutUsPage() {
   return (
     <>
       <HeadSection pageDetails={pageDetails} />
-      <div className="my-10 lg:my-20 mx-4 lg:container">
+      <div className="my-10 lg:my-20 container">
         <h1 className="text-3xl font-bold text-center">About Us</h1>
         <div className="my-20 grid grid-cols-1 lg:grid-cols-3 gap-y-20 lg:gap-x-20 ">
           <div className="flex flex-col gap-4">

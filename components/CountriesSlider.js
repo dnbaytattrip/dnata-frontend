@@ -50,23 +50,20 @@ function CountriesSlider() {
       >
         {countries.map((country, i) => (
           <SwiperSlide key={i}>
-            <Link href={`/contact?country=${country.name}`} passHref>
-              <a>
-                <div className="h-[350px] lg:h-[550px] relative mx-auto group">
-                  <Image
-                    src={country.image}
-                    alt={country.name}
-                    className="group-hover:scale-105 transition duration-1000"
-                    layout="fill"
-                    objectFit="cover"
-                    priority
-                  />
+            <Link href={`/contact?country=${country.name}`}>
+              <div className="h-[350px] lg:h-[550px] relative mx-auto group">
+                <Image
+                  src={country.image}
+                  alt={country.name}
+                  className="object-cover group-hover:scale-105 transition duration-1000"
+                  fill
+                  priority
+                />
 
-                  <h1 className="absolute inset-y-0 w-full flex justify-center items-center text-4xl lg:text-6xl font-Merienda font-bold text-white select-none">
-                    {country.name}
-                  </h1>
-                </div>
-              </a>
+                <h1 className="absolute inset-y-0 w-full flex justify-center items-center text-4xl lg:text-6xl font-Merienda font-bold text-white select-none">
+                  {country.name}
+                </h1>
+              </div>
             </Link>
           </SwiperSlide>
         ))}

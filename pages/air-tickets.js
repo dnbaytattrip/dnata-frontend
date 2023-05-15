@@ -1,18 +1,18 @@
 import HeadSection from "../components/HeadSection";
 
 const pageDetails = {
-  title: "FAQ page",
+  title: "Air tickets page",
   description: "dnata",
   keywords: "dnata",
 };
 
-function FaqPage() {
+function AirTicketsPage() {
   return (
     <>
       <HeadSection pageDetails={pageDetails} />
 
       <div className="my-10 container">
-        <h4 className="text-2xl text-center">FAQ Page</h4>
+        <h4 className="text-2xl text-center">Air tickets Page</h4>
 
         <p className="mt-8">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque esse
@@ -44,4 +44,4 @@ function FaqPage() {
   );
 }
 
-export default FaqPage;
+export default AirTicketsPage;

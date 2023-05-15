@@ -138,7 +138,7 @@ function Footer() {
         </div>
 
         <div className="mt-14 text-sm text-black">
-          <p>&copy; 2022 Dnata Limited. All Rights Reserved.</p>
+          <p>&copy; 2023 Dnata Limited. All Rights Reserved.</p>
         </div>
       </div>
     </div>

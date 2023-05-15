@@ -22,7 +22,7 @@ function FlightPage() {
         />
       </div>
 
-      <div className="my-10 lg:my-20 mx-4 lg:container">
+      <div className="my-10 lg:my-20 container">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, dolore.
         Maxime, odit fuga sunt iusto aperiam eaque provident qui laudantium
         nulla voluptates doloremque blanditiis! Est corrupti omnis obcaecati

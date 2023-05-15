@@ -1,11 +1,10 @@
 import { useRouter } from "next/router";
 import * as Yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { toast } from "react-toastify";
 import HeadSection from "../components/HeadSection";
-import { API_URL } from "../config";
 import { countries } from "../data/countries";
 import TextField from "../components/TextField";
+import usePostData from "../hooks/usePostData";
 // import { FaPhone, FaEnvelope, FaLocationArrow } from "react-icons/fa";
 
 const pageDetails = {
@@ -33,27 +32,13 @@ function ContactPage() {
     country: Yup.string().required("Country is required"),
   });
 
-  const handleSubmit = async (values, formik) => {
+  const { postData } = usePostData("/saveInfo");
+
+  const handleSubmit = (values, formik) => {
     // console.log(values);
-    // toast.success("Message sent successfully!");
     // return;
 
-    const res = await fetch(`${API_URL}/saveinfo`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    });
-
-    if (res.ok) {
-      toast.success("Message sent successfully!");
-      console.log(res);
-      formik.resetForm();
-    } else {
-      console.log("status", res.status);
-      toast.error("Something went wrong!");
-    }
+    postData(values, formik);
   };
 
   return (

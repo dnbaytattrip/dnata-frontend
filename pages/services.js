@@ -3,7 +3,7 @@ import CountriesSlider from "../components/CountriesSlider";
 import HeadSection from "../components/HeadSection";
 
 const pageDetails = {
-  title: "Setvices page",
+  title: "Services page",
   description: "dnata",
   keywords: "dnata",
 };
@@ -16,7 +16,7 @@ function Servicespage() {
         <Image
           src="/images/banners/visa-poster.jpg"
           alt="dnata banner"
-          layout="responsive"
+          // layout="responsive"
           priority
           width={6000}
           height={3136}
@@ -25,7 +25,7 @@ function Servicespage() {
 
       <CountriesSlider />
 
-      <div className="my-10 lg:my-20 mx-4 lg:container">
+      <div className="my-10 lg:my-20 container">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, dolore.
         Maxime, odit fuga sunt iusto aperiam eaque provident qui laudantium
         nulla voluptates doloremque blanditiis! Est corrupti omnis obcaecati
