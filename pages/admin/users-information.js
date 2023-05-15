@@ -21,7 +21,7 @@ function UsersInformationPage() {
 
   const usersInfo = fetchedData?.data;
 
-  console.log("users info", usersInfo);
+  // console.log("users info", usersInfo);
 
   // const { data: session } = useSession();
 
