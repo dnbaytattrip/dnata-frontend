@@ -65,16 +65,16 @@
 
 // export default useLogin;
 
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 function useLogin() {
   const router = useRouter();
 
-  console.log("router", router.query.callbackurl);
+  // console.log("router", router.query.callbackurl);
 
-  const { data, status } = useSession();
+  // const { data, status } = useSession();
 
   const loginUser = async (values) => {
     try {
