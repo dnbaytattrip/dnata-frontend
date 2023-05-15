@@ -20,7 +20,7 @@ function usePostData(route) {
 
     if (res.ok) {
       toast.success("Message sent successfully!");
-      console.log("success", data);
+      // console.log("success", data);
       formik.resetForm();
     } else {
       console.log("error", data);

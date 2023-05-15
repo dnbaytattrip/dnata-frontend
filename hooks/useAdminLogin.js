@@ -137,7 +137,7 @@ function useAdminLogin() {
     // const { ok, error } = res;
 
     if (res?.ok) {
-      console.log(res);
+      // console.log(res);
       // router.reload();
       // toast.success("Signed in Successfully");
       toast.success("Signed in Successfully");
