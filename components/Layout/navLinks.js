@@ -35,6 +35,10 @@ export const navLinks = [
         name: "Car Rental",
         link: "/car-rental",
       },
+      {
+        name: "Health Care",
+        link: "/health-care",
+      },
     ],
   },
   {
