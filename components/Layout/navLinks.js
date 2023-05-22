@@ -50,6 +50,10 @@ export const navLinks = [
     link: "/viet-travels",
   },
   {
+    name: "Umrah/Hajj Packages",
+    link: "/umrah-hajj-packages",
+  },
+  {
     name: "FAQ",
     link: "/faq",
   },
